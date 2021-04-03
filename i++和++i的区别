@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+//	int count=0,i=1;
+//	int num[10]={1,0,5,6,4,7,3,8,2,9};
+//	for(i=0;i<=9;i++){
+//		printf("num[%d]=%d\n",count++,num[i]);//从这个程序可以看出count++和++count的区别； 
+//	}
+//	
+ int i=1;
+ printf("%d",i++);//输出的是1而不是2 
+	return 0;
+}
