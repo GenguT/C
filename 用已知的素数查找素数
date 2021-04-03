@@ -1,0 +1,39 @@
+#include<stdio.h>
+int isprime(int x, int knownprimes[], int numberofknownprimes);
+int main()
+{
+	const int number = 100;
+	int prime[number] = {2};
+	int count = 1;
+	int i = 3;
+	while ( count < number ) {//1<100，count在isprime=1的情况下才会+1，这个while的作用是找到100个素数。 
+		if ( isprime(i,prime,count)){//isprime函数判断i是否为素数 
+			prime[count] = i;
+		   printf("prime[%d] = %d\n",count, i);			
+			count++;
+
+			
+		}
+	//	printf("%d\n",count);
+		i++;
+	}
+	for ( i=0 ; i<number; i++){
+		printf("prime[%d] = %d",i,prime[i]);
+		if ( (i+1)%5) printf("\t");
+		else printf("\n");
+	}
+	return 0;
+}
+
+int isprime(int x, int knownprimes[], int numberofknownprimes){ 
+	int ret = 1;
+	int i;
+	for ( i=0; i<numberofknownprimes; i++){//有多少个素数就循环多少次 
+		if ( x % knownprimes[i ]==0) {
+			ret = 0;
+			break;
+		}
+
+	}
+			return ret;
+}
